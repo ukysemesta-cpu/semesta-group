@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ukysemesta-cpu.github.io/semesta-group/sitemap.xml
