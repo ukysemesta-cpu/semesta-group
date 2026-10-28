@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bawana Project — layanan live streaming dan dokumentasi event.">
+  <title>Bawana Project | Semesta Group</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Portofolio YouTube Bawana Project */
+    .youtube-portfolio { padding-top: 34px; padding-bottom: 54px; }
+    .youtube-portfolio .video-intro { max-width: 620px; color: var(--muted, #667085); }
+    .youtube-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(250px, 32%);
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      padding: 8px 2px 18px;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+    .youtube-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(100,116,139,.22);
+      border-radius: 14px;
+      background: var(--card, #fff);
+      scroll-snap-align: start;
+      box-shadow: 0 8px 24px rgba(15,23,42,.06);
+      text-decoration: none;
+      color: inherit;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .youtube-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(15,23,42,.12); }
+    .youtube-thumb { position: relative; aspect-ratio: 16 / 9; background: #e8edf4; overflow: hidden; }
+    .youtube-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .youtube-play {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+      display: grid; place-items: center; width: 52px; height: 36px;
+      border-radius: 10px; background: rgba(220,38,38,.96); color: #fff;
+      font-size: 20px; line-height: 1; padding-left: 3px;
+    }
+    .youtube-card-title { display: block; padding: 14px 15px 16px; font-weight: 600; line-height: 1.4; }
+    .youtube-carousel-help { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; color: var(--muted, #667085); font-size: .9rem; }
+    .youtube-arrows { display: flex; gap: 8px; }
+    .youtube-arrow {
+      width: 40px; height: 40px; border: 1px solid rgba(100,116,139,.3);
+      border-radius: 50%; background: transparent; color: inherit; cursor: pointer; font-size: 20px;
+    }
+    .youtube-arrow:hover { background: rgba(100,116,139,.1); }
+    @media (max-width: 760px) { .youtube-carousel { grid-auto-columns: minmax(245px, 78%); gap: 14px; } }
+    @media (max-width: 420px) { .youtube-carousel { grid-auto-columns: 88%; } .youtube-portfolio { padding-top: 22px; padding-bottom: 36px; } }
+  </style>
+
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S</span>
+      <span>
+        <strong>SEMESTA GROUP</strong>
+        <small>PHOTO · VIDEO · LIVE STREAMING</small>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Beranda Grup</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#video-portfolio">Portofolio Video</a>
+      <a href="#paket">Paket Event</a>
+      <a href="#kontak" class="nav-cta">Hubungi Kami</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">SEMESTA GROUP PRESENTS</p>
+        <h1>Bawana <em>Project.</em></h1>
+        <p class="hero-text">
+          Solusi live streaming dan dokumentasi event untuk seminar,
+          wisuda, acara perusahaan, pertunjukan, dan berbagai kegiatan lainnya.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#paket">Lihat Layanan →</a>
+          <a class="text-link" href="#kontak">Minta penawaran ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section-wrap" id="layanan">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LAYANAN KAMI</p>
+          <h2>Acara Anda, jangkauan lebih luas.</h2>
+        </div>
+        <p>Produksi acara dengan dukungan dokumentasi dan streaming.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <span class="service-number">01 / LIVE</span>
+          <h3>Live Streaming</h3>
+          <p>Siaran langsung acara untuk audiens online.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-number">02 / EVENT</span>
+          <h3>Dokumentasi Event</h3>
+          <p>Liputan foto dan video untuk acara penting.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-number">03 / PRODUCTION</span>
+          <h3>Produksi Acara</h3>
+          <p>Dukungan produksi sesuai kebutuhan teknis acara.</p>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="youtube-portfolio section-wrap" id="video-portfolio">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">KARYA BAWANA PROJECT</p>
+          <h2>Portofolio Live Streaming</h2>
+          <p class="video-intro">Lihat beberapa dokumentasi live streaming dan acara yang pernah kami kerjakan.</p>
+        </div>
+        <p>Geser untuk melihat video lainnya.</p>
+      </div>
+
+      <div class="youtube-carousel" id="bawana-youtube-carousel" aria-label="Carousel video YouTube Bawana Project">
+        <a class="youtube-card" href="https://www.youtube.com/live/eE0LtOuJT6Q" target="_blank" rel="noopener noreferrer" aria-label="Tonton video Bawana Project 1 di YouTube">
+          <div class="youtube-thumb"><img src="https://i.ytimg.com/vi/eE0LtOuJT6Q/hqdefault.jpg" alt="Thumbnail video live streaming Bawana Project" loading="lazy"><span class="youtube-play" aria-hidden="true">▶</span></div>
+          <span class="youtube-card-title">Live Streaming Bawana Project 01</span>
+        </a>
+        <a class="youtube-card" href="https://www.youtube.com/live/5gT1hQcssfA" target="_blank" rel="noopener noreferrer" aria-label="Tonton video Bawana Project 2 di YouTube">
+          <div class="youtube-thumb"><img src="https://i.ytimg.com/vi/5gT1hQcssfA/hqdefault.jpg" alt="Thumbnail video live streaming Bawana Project" loading="lazy"><span class="youtube-play" aria-hidden="true">▶</span></div>
+          <span class="youtube-card-title">Live Streaming Bawana Project 02</span>
+        </a>
+        <a class="youtube-card" href="https://www.youtube.com/live/FMZ47CprD5A" target="_blank" rel="noopener noreferrer" aria-label="Tonton video Bawana Project 3 di YouTube">
+          <div class="youtube-thumb"><img src="https://i.ytimg.com/vi/FMZ47CprD5A/hqdefault.jpg" alt="Thumbnail video live streaming Bawana Project" loading="lazy"><span class="youtube-play" aria-hidden="true">▶</span></div>
+          <span class="youtube-card-title">Live Streaming Bawana Project 03</span>
+        </a>
+        <a class="youtube-card" href="https://www.youtube.com/live/AL-hI0EH97g" target="_blank" rel="noopener noreferrer" aria-label="Tonton video Bawana Project 4 di YouTube">
+          <div class="youtube-thumb"><img src="https://i.ytimg.com/vi/AL-hI0EH97g/hqdefault.jpg" alt="Thumbnail video live streaming Bawana Project" loading="lazy"><span class="youtube-play" aria-hidden="true">▶</span></div>
+          <span class="youtube-card-title">Live Streaming Bawana Project 04</span>
+        </a>
+        <a class="youtube-card" href="https://www.youtube.com/live/_Sm9n9wt8pc" target="_blank" rel="noopener noreferrer" aria-label="Tonton video Bawana Project 5 di YouTube">
+          <div class="youtube-thumb"><img src="https://i.ytimg.com/vi/_Sm9n9wt8pc/hqdefault.jpg" alt="Thumbnail video live streaming Bawana Project" loading="lazy"><span class="youtube-play" aria-hidden="true">▶</span></div>
+          <span class="youtube-card-title">Live Streaming Bawana Project 05</span>
+        </a>
+        <a class="youtube-card" href="https://www.youtube.com/live/LQmmUTZs708" target="_blank" rel="noopener noreferrer" aria-label="Tonton video Bawana Project 6 di YouTube">
+          <div class="youtube-thumb"><img src="https://i.ytimg.com/vi/LQmmUTZs708/hqdefault.jpg" alt="Thumbnail video live streaming Bawana Project" loading="lazy"><span class="youtube-play" aria-hidden="true">▶</span></div>
+          <span class="youtube-card-title">Live Streaming Bawana Project 06</span>
+        </a>
+      </div>
+      <div class="youtube-carousel-help">
+        <span>Geser ke samping atau gunakan tombol panah.</span>
+        <div class="youtube-arrows">
+          <button class="youtube-arrow" type="button" data-scroll="-1" aria-label="Geser video ke kiri">‹</button>
+          <button class="youtube-arrow" type="button" data-scroll="1" aria-label="Geser video ke kanan">›</button>
+        </div>
+      </div>
+      <p class="form-note">Thumbnail diambil dari YouTube. Klik video untuk menonton di YouTube.</p>
+    </section>
+
+    <section class="packages section-wrap" id="paket">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PAKET LAYANAN</p>
+          <h2>Sesuaikan kebutuhan event Anda.</h2>
+        </div>
+        <p>Harga dan rincian fasilitas akan kita masukkan setelah dikonfirmasi.</p>
+      </div>
+      <div class="package-grid">
+        <article class="package-card">
+          <p class="package-type">LIVE STREAMING</p>
+          <h3>Basic Streaming</h3>
+          <p class="package-desc">Paket live streaming sesuai kebutuhan acara.</p>
+          <div class="price">Harga <strong>konsultasi</strong></div>
+          <a class="button button-outline" href="#kontak">Tanya paket</a>
+        </article>
+        <article class="package-card featured">
+          <p class="package-type">EVENT COVERAGE</p>
+          <h3>Event Documentation</h3>
+          <p class="package-desc">Liputan acara dengan foto dan video.</p>
+          <div class="price">Harga <strong>konsultasi</strong></div>
+          <a class="button button-light" href="#kontak">Tanya paket</a>
+        </article>
+        <article class="package-card">
+          <p class="package-type">CUSTOM</p>
+          <h3>Custom Production</h3>
+          <p class="package-desc">Kebutuhan produksi yang disesuaikan dengan acara.</p>
+          <div class="price">Harga <strong>konsultasi</strong></div>
+          <a class="button button-outline" href="#kontak">Minta penawaran</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact section-wrap" id="kontak">
+      <div class="contact-copy">
+        <p class="eyebrow">KONSULTASI EVENT</p>
+        <h2>Mari siapkan acara <em>Anda.</em></h2>
+        <p>Hubungi tim Bawana Project untuk mendiskusikan kebutuhan teknis dan dokumentasi acara.</p>
+      </div>
+      <div class="booking-form">
+  <p>
+    Hubungi Bawana Project untuk konsultasi live streaming,
+    dokumentasi, dan kebutuhan liputan event.
+  </p>
+
+  <a class="button button-dark"
+     href="https://wa.me/6285973272829?text=Halo%20Bawana%20Project%2C%20saya%20ingin%20konsultasi%20layanan%20live%20streaming%20atau%20liputan%20event."
+     target="_blank"
+     rel="noopener noreferrer">
+    Konsultasi via WhatsApp →
+  </a>
+
+  <a class="button button-outline" href="index.html">
+    
+<p class="form-note">
+  Instagram:
+  <a href="https://www.instagram.com/bawana_project/"
+     target="_blank" rel="noopener noreferrer">
+    @bawana_project ↗
+  </a>
+</p>
+
+<p class="form-note">
+  YouTube:
+  <a href="https://youtube.com/@bawanapro?si=ebQYCK9E2S5yiEsi"
+     target="_blank" rel="noopener noreferrer">
+    Bawana Project ↗
+  </a>
+</p>
+<!-- Tombol kembali -->
+  <a class="text-link" href="index.html">
+    ← Kembali ke Semesta Group
+  </a>
+</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="index.html">
+      <span class="brand-mark">S</span>
+      <span><strong>SEMESTA GROUP</strong><small>PHOTO · VIDEO · LIVE STREAMING</small></span>
+    </a>
+    <p>Bawana Project — Live Streaming & Event</p>
+  </footer>
+
+  <script>
+    (function () {
+      const carousel = document.getElementById('bawana-youtube-carousel');
+      if (!carousel) return;
+      document.querySelectorAll('.youtube-arrow').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const firstCard = carousel.querySelector('.youtube-card');
+          const amount = firstCard ? firstCard.getBoundingClientRect().width + 18 : 300;
+          carousel.scrollBy({ left: Number(button.dataset.scroll) * amount, behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

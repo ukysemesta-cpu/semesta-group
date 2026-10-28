@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Cek Progress Project | Semesta Group</title>
+<style>
+:root{--navy:#102c50;--muted:#64748b;--line:#e2e8f0;--green:#15803d}
+*{box-sizing:border-box}body{margin:0;background:#f5f8fc;color:#172033;font:16px/1.5 Arial,Helvetica,sans-serif}
+.wrap{width:min(720px,calc(100% - 30px));margin:28px auto}
+header{background:var(--navy);color:#fff;padding:24px;border-radius:16px;display:flex;gap:14px;align-items:center}
+.logo{width:48px;height:48px;border:1px solid #ffffff80;border-radius:12px;display:grid;place-items:center;font-size:25px}
+h1{font-size:25px;margin:0}header p{margin:4px 0 0;color:#dbeafe;font-size:12px;letter-spacing:2px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:18px;box-shadow:0 5px 18px #0f172a08}
+label{display:block;font-weight:bold;margin-bottom:8px}.formrow{display:flex;gap:9px}
+input{min-width:0;flex:1;padding:13px;border:1px solid #cbd5e1;border-radius:9px;font-size:16px}
+button{background:var(--navy);color:#fff;border:0;border-radius:9px;padding:13px 16px;font-weight:bold;cursor:pointer}
+button:disabled{opacity:.6}.hint,footer{color:var(--muted);font-size:13px}
+.notice{margin-top:14px;padding:12px 14px;background:#eff6ff;color:#1e40af;border-radius:9px}.error{background:#fef2f2;color:#991b1b}
+#project{display:none}.head{display:flex;justify-content:space-between;gap:12px;align-items:start}.eyebrow{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1px}
+h2{font-size:24px;margin:4px 0;overflow-wrap:anywhere}.muted{color:var(--muted);font-size:14px}
+.pill{background:#dbeafe;color:#1d4ed8;padding:6px 10px;border-radius:99px;font-size:13px;font-weight:bold}
+.track{height:9px;background:#e2e8f0;border-radius:99px;overflow:hidden;margin:22px 0 7px}.bar{height:100%;width:0;background:#16a34a}
+.percent,.meta{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)}
+ol{list-style:none;padding:0;margin:24px 0 0}.step{display:flex;gap:12px;position:relative;padding-bottom:22px}.step:last-child{padding-bottom:0}
+.step:not(:last-child):before{content:"";position:absolute;left:16px;top:34px;bottom:0;width:2px;background:var(--line)}
+.dot{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;flex:none;background:#e2e8f0;color:#475569;font-weight:bold;z-index:1}
+.done .dot{background:#dcfce7;color:var(--green)}.current .dot{background:var(--navy);color:white}
+.stepbody{flex:1}.step-title{font-weight:bold;margin-top:3px}.desc{font-size:13px;color:var(--muted)}.state{font-size:12px;color:var(--muted);padding-top:5px;text-align:right}.done .state{color:var(--green);font-weight:bold}
+.meta{border-top:1px solid var(--line);margin-top:22px;padding-top:16px}.meta strong{color:#172033}
+footer{text-align:center;padding:20px 8px}
+@media(max-width:520px){.wrap{margin:16px auto}.formrow{flex-direction:column}.formrow button{width:100%}.card{padding:18px}.head{display:block}.pill{display:inline-block;margin-top:10px}.meta{display:block}.meta strong{display:block;margin-top:4px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header><div class="logo" aria-hidden="true">✦</div><div><h1>SEMESTA GROUP</h1><p>CLIENT PROJECT TRACKER</p></div></header>
+<section class="card">
+<label for="token">Cek progress project</label>
+<form id="form" class="formrow"><input id="token" autocomplete="off" placeholder="Masukkan token proyek" required><button id="btn">Cek Progress</button></form>
+<p class="hint">Masukkan token khusus yang diberikan oleh tim Semesta Group.</p>
+<div id="message" class="notice" role="status" aria-live="polite">Masukkan token proyek untuk melihat status terbaru.</div>
+</section>
+<section id="project" class="card" aria-live="polite">
+<div class="head"><div><div class="eyebrow">Nama proyek</div><h2 id="projectName">—</h2><div id="brand" class="muted">—</div></div><span id="pill" class="pill">—</span></div>
+<div class="track"><div id="bar" class="bar"></div></div><div class="percent"><span>Progres pengerjaan</span><strong id="percent">0%</strong></div>
+<ol id="steps"></ol><div class="meta"><span>Estimasi selesai</span><strong id="date">Belum ditentukan</strong></div>
+</section>
+<footer>Semesta Group · Status diperbarui oleh tim kami.</footer>
+</main>
+<script>
+// Ganti nilai ini dengan Web app URL Apps Script Anda yang berakhiran /exec.
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxefV51H0tTQJukDef6Uw5OT-739Iy6JWoyq2-5YdxwSRFUzpSA6UNJCz2gNCQjF-bY/exec";
+const stages=[
+ {name:"Proses Sortir",desc:"Pemilihan foto untuk tahap berikutnya."},
+ {name:"Proses Editing",desc:"Penyempurnaan foto sedang dikerjakan."},
+ {name:"Proses Cetak",desc:"Foto dipersiapkan untuk proses cetak."},
+ {name:"Selesai",desc:"Proyek telah selesai diproses."}
+];
+const form=document.getElementById("form"), input=document.getElementById("token"), btn=document.getElementById("btn");
+const msg=document.getElementById("message"), project=document.getElementById("project");
+function notice(text,error=false){msg.textContent=text;msg.className="notice"+(error?" error":"");msg.style.display="block";}
+function render(data){
+ const index=stages.findIndex(s=>s.name.toLowerCase()===String(data.status||"").trim().toLowerCase());
+ if(index<0)throw Error("Status tidak dikenali. Gunakan: Proses Sortir, Proses Editing, Proses Cetak, atau Selesai.");
+ document.getElementById("projectName").textContent=data.project||"Proyek";
+ document.getElementById("brand").textContent=data.brand||"Semesta Group";
+ document.getElementById("pill").textContent=data.status;
+ document.getElementById("date").textContent=data.estimatedCompletion||"Belum ditentukan";
+ const pct=Math.round((index+1)/stages.length*100);
+ document.getElementById("percent").textContent=pct+"%";document.getElementById("bar").style.width=pct+"%";
+ const list=document.getElementById("steps");list.replaceChildren();
+ stages.forEach((s,i)=>{const li=document.createElement("li");li.className="step"+(i<index?" done":"")+(i===index?" current":"");
+ const dot=document.createElement("span");dot.className="dot";dot.textContent=i<index?"✓":String(i+1);
+ const body=document.createElement("div");body.className="stepbody";
+ const title=document.createElement("div");title.className="step-title";title.textContent=s.name;
+ const desc=document.createElement("div");desc.className="desc";desc.textContent=s.desc;body.append(title,desc);
+ const state=document.createElement("span");state.className="state";state.textContent=i<index?"Selesai":i===index?"Sedang dikerjakan":"Menunggu";
+ li.append(dot,body,state);list.append(li);});
+ project.style.display="block";msg.style.display="none";
+}
+async function lookup(token){
+ if(!WEB_APP_URL.startsWith("https://script.google.com/")||!WEB_APP_URL.endsWith("/exec"))throw Error("URL Web App belum diatur. Isi WEB_APP_URL di file progress.html dengan URL Apps Script yang berakhir /exec.");
+ const response=await fetch(WEB_APP_URL+"?token="+encodeURIComponent(token),{method:"GET",redirect:"follow"});
+ if(!response.ok)throw Error("Layanan progress tidak dapat dihubungi. Coba lagi.");
+ const data=await response.json();if(!data.ok)throw Error(data.message||"Proyek tidak ditemukan.");return data;
+}
+form.addEventListener("submit",async e=>{e.preventDefault();const token=input.value.trim();if(!token)return;
+ btn.disabled=true;btn.textContent="Memeriksa…";project.style.display="none";notice("Sedang mengambil status proyek…");
+ try{render(await lookup(token));}catch(err){notice(err.message||"Terjadi kesalahan. Coba lagi.",true);}
+ finally{btn.disabled=false;btn.textContent="Cek Progress";}});
+const initial=new URLSearchParams(location.search).get("token");if(initial){input.value=initial;form.requestSubmit();}
+</script>
+</body>
+</html>

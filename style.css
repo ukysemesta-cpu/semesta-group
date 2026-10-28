@@ -1,0 +1,766 @@
+*{box-sizing:border-box} :root{--ink:#26364A;--muted:#5D6B7A;--paper:#FFFFFF;--white:#fff;--accent:#102B4E;--line:#D9E2EC;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6}a{color:inherit;text-decoration:none}.site-header{height:86px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(247,246,241,.95);position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--ink);border-radius:50%;font-family:var(--serif);font-size:25px}.
+.brand strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .10em;
+  color: #102B4E;
+}
+
+.brand small {
+  display: block;
+  font-size: 9px;
+  color: #5D6B7A;
+  margin-top: 6px;
+  line-height: 1.5;
+  letter-spacing: .08em;
+}
+.nav{display:flex;align-items:center;gap:30px;font-size:12px}.nav a:not(.nav-cta){color:#53564f}.nav a:hover,.text-link:hover{opacity:.65}.nav-cta{border:1px solid var(--ink);padding:11px 17px}.menu-toggle{display:none;border:0;background:none;font-size:25px}.hero{display:grid;grid-template-columns:1fr 1fr;min-height:620px;padding:60px 7vw 74px;gap:7%;align-items:center}.hero-copy{max-width:540px}.eyebrow{font-size:10px;letter-spacing:.18em;font-weight:700;color:#6d7564;margin:0 0 22px}.eyebrow span,.label-dot{display:inline-block;width:7px;height:7px;background:#8d9b7b;border-radius:50%;margin-right:8px}.hero h1,.intro h2,.section-heading h2,.testimonial h2,.contact h2,.location-band h2{font-family:var(--serif);font-weight:500;letter-spacing:-.045em;line-height:1.12}.hero h1{font-size:clamp(48px,6vw,82px);margin:0 0 24px}.hero h1 em,.intro h2 em,.contact h2 em{font-weight:500;color:#7d8b6d}.hero-text{font-size:15px;line-height:1.9;color:var(--muted);max-width:400px}.hero-actions{display:flex;align-items:center;gap:25px;margin-top:32px}.button{display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:14px 20px;font-family:var(--sans);font-size:12px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px)}.button-dark{background:var(--ink);color:white}.button-light{background:var(--paper);color:var(--ink)}.button-outline{border-color:var(--line);background:transparent}.text-link{font-size:12px;font-weight:600}.hero-note{display:flex;align-items:center;gap:13px;margin-top:55px;font-size:9px;letter-spacing:.16em;color:var(--muted)}.note-line{width:35px;height:1px;background:#9a9d92}.hero-art{position:relative;padding:0 18px 22px 0}.hero-image{width:100%;height:470px;object-fit:cover;display:block;filter:saturate(.8)}.hero-art:after{content:"";position:absolute;right:0;bottom:0;width:70%;height:70%;border:1px solid #b7bcae;z-index:-1}.image-label{position:absolute;bottom:0;left:-18px;background:var(--white);padding:14px 18px;font-size:9px;letter-spacing:.12em}.hero-stamp{position:absolute;top:22px;right:-18px;background:#b9c4ab;color:#30382b;border-radius:50%;width:74px;height:74px;display:grid;place-content:center;text-align:center;font-family:var(--serif);font-size:30px;line-height:.85;transform:rotate(10deg)}.hero-stamp small{font:7px var(--sans);letter-spacing:.15em;margin-top:7px}.section-wrap{padding:100px 7vw}.intro{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.intro-grid{display:grid;grid-template-columns:1.1fr .8fr;gap:12%;align-items:end}.intro h2,.section-heading h2,.testimonial h2,.contact h2,.location-band h2{font-size:clamp(34px,4vw,54px);margin:0}.intro-grid>p,.section-heading>p{color:var(--muted);font-size:14px;line-height:1.9;margin:0}.services{background:#eeeee7}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:38px}.section-heading>p{max-width:300px}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.service-card{background:var(--paper);padding:30px;min-height:260px;display:flex;flex-direction:column}.service-number,.package-type{font-size:9px;letter-spacing:.15em;color:#7c856e}.service-card h3,.package-card h3{font-family:var(--serif);font-size:29px;font-weight:500;margin:27px 0 10px}.service-card p,.package-desc{font-size:12px;line-height:1.9;color:var(--muted);margin:0 0 24px}.service-card a{font-size:11px;font-weight:700;margin-top:auto}.portfolio-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:17px}.work{position:relative;min-height:270px;overflow:hidden;background:#ddd}.work-tall{min-height:470px;grid-row:span 2}.work img{width:100%;height:100%;min-height:270px;position:absolute;inset:0;object-fit:cover;transition:transform .5s;filter:saturate(.78)}.work-tall img{min-height:470px}.work:hover img{transform:scale(1.04)}.work:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.65))}.work-caption{position:absolute;bottom:22px;left:22px;z-index:1;color:white}.work-caption span{font-size:9px;letter-spacing:.15em}.work-caption h3{font-family:var(--serif);font-weight:500;font-size:23px;margin:5px 0 0}.packages{background:#eeeee7}.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.package-card{background:var(--paper);padding:30px;min-height:300px;display:flex;flex-direction:column}.package-card h3{margin:17px 0 8px}.price{font-size:11px;color:var(--muted);margin-top:auto;margin-bottom:18px}.price strong{display:block;font-size:22px;color:var(--ink);font-family:var(--serif);font-weight:500}.package-card .button{width:100%}.package-card.featured{background:#273027;color:white}.featured .package-type,.featured .package-desc,.featured .price{color:#c7cdbf}.featured .price strong{color:white}.testimonial{text-align:center}.testimonial h2{max-width:700px;margin:0 auto 35px}.quote-card{max-width:650px;margin:auto;padding:38px 30px;background:#eeeee7}.quote-mark{font:60px var(--serif);color:#879477;line-height:1}.quote-card blockquote{font:22px/1.6 var(--serif);margin:10px 0 20px}.quote-author{font-size:11px;font-weight:700}.quote-author span{font-weight:400;color:var(--muted)}.small-note{font-size:10px;color:var(--muted);margin-top:15px}.contact{background:#e8e9e0;display:grid;grid-template-columns:1fr .8fr;gap:10%;align-items:start}.contact-copy>p:not(.eyebrow){font-size:13px;color:var(--muted);max-width:400px;line-height:1.9}.contact-details{display:flex;gap:40px;margin-top:40px;flex-wrap:wrap}.contact-details p{margin:0}.contact-details span,.contact-details strong{display:block}.contact-details span{font-size:9px;letter-spacing:.14em;color:#6d7564;margin-bottom:7px}.contact-details strong{font-size:12px}.booking-form{background:var(--paper);padding:30px;display:grid;gap:18px}.booking-form label{font-size:11px;font-weight:600;display:grid;gap:8px}.booking-form input,.booking-form select,.booking-form textarea{width:100%;font:12px var(--sans);padding:12px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:0}.booking-form input:focus,.booking-form select:focus,.booking-form textarea:focus{outline:1px solid #89957b}.form-submit{width:100%}.form-note{font-size:10px;color:var(--muted);margin:0;line-height:1.7}.location-band{padding:55px 7vw;background:#293128;color:white;display:flex;align-items:center;justify-content:space-between;gap:25px}.location-band .eyebrow{color:#c7d0bc}.location-band h2{font-size:36px}.location-band p:not(.eyebrow){color:#c6c9c1;font-size:12px}.site-footer{padding:35px 7vw;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.brand-footer .brand-mark{width:52px;height:52px;font-size:20px}.site-footer>p,.site-footer>span{font-size:10px;color:var(--muted)}@media(max-width:850px){.site-header{padding:0 5vw;height:75px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:74px;left:0;right:0;background:var(--paper);padding:22px 5vw 28px;flex-direction:column;align-items:stretch;gap:20px;border-bottom:1px solid var(--line)}.nav.open{display:flex}.nav-cta{text-align:center}.hero{grid-template-columns:1fr;padding:50px 6vw 65px;gap:45px}.hero-copy{max-width:650px}.hero h1{font-size:clamp(48px,11vw,72px)}.hero-art{max-width:650px;width:100%;margin:auto}.hero-image{height:430px}.section-wrap{padding:70px 6vw}.intro-grid,.contact{grid-template-columns:1fr;gap:25px}.section-heading{align-items:start;flex-direction:column;gap:14px}.service-grid,.package-grid{grid-template-columns:1fr}.service-card{min-height:220px}.portfolio-grid{grid-template-columns:1fr 1fr}.work-tall{grid-row:span 1;min-height:320px}.work-tall img{min-height:320px}.location-band{padding:45px 6vw}.site-footer{padding:30px 6vw}}@media(max-width:520px){.hero{padding-top:40px}.hero-image{height:340px}.hero-actions{gap:17px;flex-wrap:wrap}.hero-note{margin-top:35px}.portfolio-grid{grid-template-columns:1fr}.work,.work-tall{min-height:340px}.work img,.work-tall img{min-height:340px}.section-wrap{padding:60px 6vw}.intro h2,.section-heading h2,.testimonial h2,.contact h2{font-size:38px}.contact-details{gap:20px;flex-direction:column}.booking-form{padding:22px}.location-band{align-items:flex-start;flex-direction:column}.site-footer{align-items:flex-start;flex-direction:column;gap:12px}.quote-card blockquote{font-size:19px}}
+
+
+/* SEMESTA GROUP — tema biru tua dan putih */
+.eyebrow{color:#355B82}
+.eyebrow span,.label-dot{background:#527BA5}
+.hero h1 em,.intro h2 em,.contact h2 em{color:#102B4E}
+.button-dark{background:#102B4E;color:#fff}
+.button-dark:hover{background:#23466F}
+.hero-art:after{border-color:#AABBD0}
+.hero-stamp{background:#EAF0F7;color:#102B4E}
+.services,.packages,.quote-card{background:#EAF0F7}
+.service-number,.package-type{color:#527BA5}
+.package-card.featured{background:#102B4E;color:#fff}
+.featured .package-type,.featured .package-desc,.featured .price{color:#DCE6F1}
+.featured .price strong{color:#fff}
+.quote-mark{color:#527BA5}
+.contact{background:#EAF0F7}
+.contact-details span{color:#355B82}
+.booking-form input:focus,.booking-form select:focus,.booking-form textarea:focus{outline:1px solid #527BA5}
+.location-band{background:#102B4E;color:#fff}
+.location-band .eyebrow{color:#DCE6F1}
+.location-band p:not(.eyebrow){color:#DCE6F1}
+.nav-cta{border-color:#102B4E}
+@media(max-width:850px){.nav{background:#fff}}
+
+/* Logo utama Semesta Pictures */
+.hero-brand-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto 0;
+  padding: 20px;
+}
+
+.hero-brand-logo img {
+  display: block;
+  width: min(100%, 620px);
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 850px) {
+  .hero-brand-logo {
+    padding: 12px 0;
+  }
+
+  .hero-brand-logo img {
+    width: min(100%, 460px);
+  }
+}
+
+/* Media sosial Semesta Group */
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.2s ease;
+}
+
+.social-icons a:hover {
+  opacity: 0.7;
+}
+
+.social-icons svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .social-icons {
+    gap: 14px;
+  }
+
+  .social-icons a {
+    font-size: 13px;
+  }
+}
+
+/* Format harga dan fasilitas paket Home Studio */
+.package-option {
+  margin: 16px 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.package-option h4 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.package-price {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.package-price span {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.package-option ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.package-option li {
+  margin-bottom: 7px;
+  line-height: 1.6;
+}
+
+.package-desc {
+  line-height: 1.6;
+}
+
+/* Perapian khusus kartu Self Photo dan Pre Wedding */
+#paket .package-card:nth-child(1) .package-option,
+#paket .package-card:nth-child(2) .package-option {
+  margin: 14px 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+#paket .package-card:nth-child(1) .package-option h4,
+#paket .package-card:nth-child(2) .package-option h4 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+#paket .package-card:nth-child(1) .package-option ul,
+#paket .package-card:nth-child(2) .package-option ul {
+  padding-left: 20px;
+}
+
+#paket .package-card:nth-child(1) .package-option li,
+#paket .package-card:nth-child(2) .package-option li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* SOP Editing dan Add-on versi ringkas */
+.sop-compact {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sop-compact .section-heading {
+  margin-bottom: 24px;
+}
+
+.sop-compact .section-heading h2,
+.addon-heading h2 {
+  font-size: clamp(26px, 3vw, 36px);
+}
+
+.sop-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.sop-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 8px;
+}
+
+.sop-item > span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #54749a;
+  padding-top: 3px;
+}
+
+.sop-item h3,
+.addon-item h3 {
+  font-size: 16px;
+  margin: 0 0 5px;
+}
+
+.sop-item p,
+.addon-item p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.addon-compact {
+  margin-top: 28px;
+}
+
+.addon-heading {
+  margin-bottom: 14px;
+}
+
+.addon-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.addon-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 8px;
+}
+
+.addon-item strong {
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.addon-item small {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+@media (max-width: 650px) {
+  .sop-list,
+  .addon-list {
+    grid-template-columns: 1fr;
+  }
+
+  .sop-item,
+  .addon-item {
+    padding: 14px;
+  }
+
+  .addon-item h3 {
+    font-size: 14px;
+  }
+}
+
+/* Tabel harga cetak foto dan bingkai */
+.print-price-section {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.print-price-table-wrap {
+  width: 100%;
+  max-width: 720px;
+  overflow-x: auto;
+}
+
+.print-price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.print-price-table th,
+.print-price-table td {
+  padding: 13px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.print-price-table th {
+  font-weight: 700;
+  background: rgba(128, 128, 128, 0.08);
+}
+
+.print-price-table td:last-child,
+.print-price-table th:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.print-price-table tbody tr:hover {
+  background: rgba(128, 128, 128, 0.06);
+}
+
+@media (max-width: 600px) {
+  .print-price-table {
+    font-size: 14px;
+  }
+
+  .print-price-table th,
+  .print-price-table td {
+    padding: 11px 10px;
+  }
+}
+
+/* Tambahan waktu Self Photo / Photobox */
+.extra-time-section {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.extra-time-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.extra-time-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 8px;
+}
+
+.extra-time-item h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+}
+
+.extra-time-item p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.extra-time-item strong {
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+@media (max-width: 700px) {
+  .extra-time-list {
+    grid-template-columns: 1fr;
+  }
+
+  .extra-time-item {
+    padding: 14px;
+  }
+}
+
+/* Alur pemotretan */
+.shooting-flow {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flow-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.flow-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 8px;
+}
+
+.flow-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #132f50;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.flow-item h3 {
+  margin: 2px 0 6px;
+  font-size: 16px;
+}
+
+.flow-item p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+  .flow-list {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-item {
+    padding: 14px;
+  }
+}
+
+.qris-section {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.qris-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.qris-card {
+  padding: 22px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.qris-card h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.qris-card img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  background: #fff;
+}
+
+.qris-note {
+  margin-top: 18px;
+  text-align: center;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+@media (max-width: 650px) {
+  .qris-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qris-card {
+    padding: 16px;
+  }
+}
+
+.qris-security-note {
+  margin-top: 24px;
+  padding: 18px 22px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 10px;
+}
+
+.qris-security-note h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.qris-security-note ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.qris-security-note li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.qris-security-note li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Perbaikan logo Semesta Group di layar HP */
+
+/* Logo Semesta Group — tampilan mobile */
+@media (max-width: 650px) {
+  .hero-art.hero-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow: visible;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .hero-art.hero-logo .hero-logo-image {
+    display: block;
+    position: static;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    transform: none;
+    object-fit: contain;
+  }
+
+  .hero-art.hero-logo .hero-logo-caption {
+    display: block;
+    position: static;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px auto 0;
+    padding: 0;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: break-word;
+    transform: none;
+    border: none;
+    box-sizing: border-box;
+  }
+}
+
+
+/* Hilangkan dekorasi bingkai foto pada area logo */
+.hero-art.hero-logo::after {
+  display: none;
+  content: none;
+}
+
+.hero-art.hero-logo {
+  position: relative;
+  min-width: 0;
+}
+
+.hero-art.hero-logo .hero-logo-image {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.hero-art.hero-logo .hero-logo-caption {
+  position: static;
+  width: 100%;
+  max-width: 460px;
+  margin: 12px auto 0;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+/* Penyesuaian logo untuk layar HP */
+@media (max-width: 650px) {
+  .hero-art.hero-logo {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .hero-art.hero-logo .hero-logo-image {
+    max-width: 300px;
+  }
+
+  .hero-art.hero-logo .hero-logo-caption {
+    max-width: 300px;
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* Rapikan area logo Semesta Group di HP */
+@media (max-width: 650px) {
+  .hero > .image-label,
+  .hero > .hero-stamp {
+    display: none !important;
+  }
+
+  .hero-art.hero-logo {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .hero-art.hero-logo .hero-logo-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .hero-art.hero-logo .hero-logo-caption {
+    margin-top: 8px;
+  }
+}
+
+
+
+/* SLIDER ULASAN SEMESTA GROUP */
+.testimonial-heading {
+  max-width: 760px;
+  margin: 0 auto 34px;
+}
+.testimonial-heading .eyebrow { margin-bottom: 18px; }
+.testimonial-heading h2 { margin-bottom: 16px; }
+.testimonial-intro {
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 14px;
+}
+.review-slider {
+  max-width: 1040px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: left;
+}
+.review-track {
+  display: flex;
+  gap: 18px;
+  transition: transform 650ms cubic-bezier(.22,.7,.25,1);
+  will-change: transform;
+}
+.review-card {
+  flex: 0 0 calc((100% - 36px) / 3);
+  min-width: 0;
+  padding: 25px;
+  background: #F5F8FC;
+  border: 1px solid #D9E4F0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+}
+.review-topline {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #102B4E;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 20px;
+}
+.review-person {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.review-person strong { font-size: 12px; color: #102B4E; }
+.review-person span { font-size: 10px; color: var(--muted); }
+.google-mark {
+  margin-left: auto;
+  font: 700 22px Arial, sans-serif;
+  color: #4285F4;
+}
+.review-stars {
+  margin: 18px 0 10px;
+  color: #E5A000;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.review-text {
+  margin: 0 0 18px;
+  color: #34465B;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.review-source {
+  margin-top: auto;
+  color: #6D7C8D;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.review-controls {
+  max-width: 1040px;
+  margin: 22px auto 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.review-dots, .review-arrows { display: flex; align-items: center; gap: 9px; }
+.review-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #C5D1DF;
+  cursor: pointer;
+}
+.review-dot.is-active { width: 23px; border-radius: 8px; background: #102B4E; }
+.review-arrow {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #C9D6E5;
+  border-radius: 50%;
+  background: #fff;
+  color: #102B4E;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.review-arrow:hover { background: #102B4E; color: #fff; }
+.review-google-button { margin-top: 2px; }
+.testimonial .small-note { max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+@media (max-width: 850px) {
+  .review-card { flex-basis: calc((100% - 18px) / 2); }
+}
+@media (max-width: 560px) {
+  .review-card { flex-basis: 100%; padding: 22px; }
+  .review-track { gap: 12px; }
+  .review-controls { margin-top: 18px; }
+  .testimonial-intro { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .review-track { transition: none; }
+}
