@@ -822,3 +822,19 @@
     max-width: none;
   }
 }
+
+/* Logo Semesta Home Studio di header */
+.brand-logo {
+  display: block;
+  width: 180px;
+  height: 60px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+@media (max-width: 600px) {
+  .brand-logo {
+    width: 135px;
+    height: 46px;
+  }
+}
