@@ -764,3 +764,61 @@
 @media (prefers-reduced-motion: reduce) {
   .review-track { transition: none; }
 }
+
+/* ===== TIGA LOGO BRAND ===== */
+
+/* Logo kecil di header */
+.brand-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.brand-logos img {
+  display: block;
+  width: auto;
+  height: 42px;
+  max-width: 30%;
+  object-fit: contain;
+}
+
+/* Tiga logo besar di halaman utama */
+.hero-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.hero-logos img {
+  display: block;
+  width: 30%;
+  max-width: 240px;
+  height: 180px;
+  object-fit: contain;
+}
+
+/* Penyesuaian untuk HP */
+@media (max-width: 600px) {
+  .brand-logos {
+    gap: 5px;
+  }
+
+  .brand-logos img {
+    height: 28px;
+    max-width: 31%;
+  }
+
+  .hero-logos {
+    gap: 6px;
+  }
+
+  .hero-logos img {
+    width: 32%;
+    height: 95px;
+    max-width: none;
+  }
+}
