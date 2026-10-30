@@ -1229,3 +1229,171 @@
     margin-left: 0;
   }
 }
+
+
+/* === SEMESTA BRAND PAGES: HEADER & SOCIAL FOOTER === */
+.site-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-width: 0;
+}
+.site-header .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  min-width: 0;
+  text-decoration: none;
+}
+.site-header .brand img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex: 0 0 48px;
+}
+.site-header .brand strong {
+  display: block;
+  color: #102B4E;
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .06em;
+  white-space: nowrap;
+}
+.site-header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  width: auto;
+  gap: clamp(12px, 1.6vw, 25px);
+  margin-left: auto;
+}
+.site-header .nav a { white-space: nowrap; }
+.site-header .menu-toggle { display: none; }
+
+.social-section {
+  padding: 64px 7vw 70px;
+  border-top: 1px solid var(--line);
+  background: #f7f9fc;
+  text-align: center;
+}
+.social-content {
+  width: min(100%, 760px);
+  margin: 0 auto;
+}
+.social-content .eyebrow { margin-bottom: 12px; }
+.social-content h2 {
+  margin: 0 0 12px;
+  color: #102B4E;
+  font-family: var(--serif);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 500;
+  line-height: 1.15;
+}
+.social-content > p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 150px;
+  padding: 13px 20px;
+  border: 1px solid #d5deea;
+  border-radius: 8px;
+  background: #fff;
+  color: #102B4E;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.social-link:hover {
+  background: #102B4E;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.social-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid currentColor;
+  border-radius: 6px;
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 700;
+}
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 7vw;
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+.site-footer .brand-footer { display: inline-flex; align-items: center; gap: 10px; }
+.site-footer .brand-footer img { width: 34px; height: 34px; object-fit: contain; }
+.site-footer .brand-footer strong { font-size: 12px; letter-spacing: .05em; }
+.site-footer > p { margin: 0; color: var(--muted); font-size: 11px; }
+
+@media (max-width: 1050px) and (min-width: 851px) {
+  .site-header { padding-left: 3vw; padding-right: 3vw; gap: 14px; }
+  .site-header .brand img { width: 40px; height: 40px; flex-basis: 40px; }
+  .site-header .brand strong { font-size: 13px; letter-spacing: .03em; }
+  .site-header .nav { gap: 10px; font-size: 10px; }
+}
+@media (max-width: 850px) {
+  .site-header { height: 75px; padding: 0 5vw; flex-wrap: nowrap; }
+  .site-header .brand img { width: 42px; height: 42px; flex-basis: 42px; }
+  .site-header .brand strong { font-size: 13px; }
+  .site-header .menu-toggle { display: block; margin-left: auto; flex: 0 0 auto; }
+  .site-header .nav {
+    display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    padding: 22px 5vw 28px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .nav.open { display: flex; }
+  .site-header .nav a { white-space: normal; }
+}
+@media (max-width: 520px) {
+  .social-section { padding: 52px 6vw 56px; }
+  .social-links { gap: 10px; }
+  .social-link { min-width: 132px; padding: 12px 15px; }
+  .site-footer { align-items: flex-start; flex-direction: column; gap: 10px; padding: 24px 6vw; }
+}
+
+.social-svg {
+  display: block;
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+  color: currentColor;
+}

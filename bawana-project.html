@@ -61,19 +61,18 @@
 <body>
   
 <header class="site-header">
-  <a class="brand bawana-brand" href="index.html">
-    <span class="bawana-brand-text">
-      <strong>BAWANA PROJECT</strong>
-      <small>LIVE RECORDING · LIVE STREAMING</small>
-    </span>
+  <a class="brand" href="index.html" aria-label="BAWANA PROJECT - Beranda">
+    <img src="images/bawana-project.png" alt="Logo Bawana Project">
+    <strong>BAWANA PROJECT</strong>
   </a>
-
-  <nav class="nav">
-    <a href="index.html">Beranda Grup</a>
-    <a href="#layanan">Layanan</a>
-    <a href="#video-portfolio">Portofolio Video</a>
-    <a href="#paket">Paket Event</a>
-    <a href="#kontak" class="nav-cta">Hubungi Kami</a>
+  <button class="menu-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+  <nav class="nav" aria-label="Navigasi utama">
+      <a href="index.html">Beranda Grup</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#video-portfolio">Portofolio Video</a>
+      <a href="#paket">Paket Event</a>
+      <a href="#media-sosial">Media Sosial</a>
+      <a href="#kontak" class="nav-cta">Hubungi Kami</a>
   </nav>
 </header>
 
@@ -219,9 +218,7 @@
     Konsultasi via WhatsApp →
   </a>
 
-  <a class="button button-outline" href="index.html">
-    
-<p class="form-note">
+  <p class="form-note">
   Instagram:
   <a href="https://www.instagram.com/bawana_project/"
      target="_blank" rel="noopener noreferrer">
@@ -238,19 +235,42 @@
 </p>
 <!-- Tombol kembali -->
   <a class="text-link" href="index.html">
-    ← Kembali ke Semesta Group
+    ← Kembali ke Semesta Photo - Video
   </a>
 </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <a class="brand brand-footer" href="index.html">
-      <span class="brand-mark">S</span>
-      <span><strong>SEMESTA GROUP</strong><small>PHOTO · VIDEO · LIVE STREAMING</small></span>
-    </a>
-    <p>Bawana Project — Live Streaming & Event</p>
-  </footer>
+  
+<section class="social-section section-wrap" id="media-sosial">
+  <div class="social-content">
+    <p class="eyebrow">FOLLOW US</p>
+    <h2>Ikuti Media Sosial Kami</h2>
+    <p>Temukan karya terbaru Bawana Project.</p>
+    <!-- Instagram Feed -->
+<div class="instagram-feed-wrap">
+  <div class="sk-instagram-feed" data-embed-id="25726147"></div>
+</div>
+
+<!-- Tombol YouTube tetap dipertahankan -->
+<div class="social-links">
+  <a class="social-link"
+     href="https://youtube.com/@bawanapro?si=ebQYCK9E2S5yiEsi"
+     target="_blank"
+     rel="noopener noreferrer">
+    <span>YouTube</span>
+  </a>
+</div>
+
+<script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
+</section>
+<footer class="site-footer">
+  <a class="brand brand-footer" href="index.html">
+    <img src="images/bawana-project.png" alt="" aria-hidden="true">
+    <strong>BAWANA PROJECT</strong>
+  </a>
+  <p>© 2026 Semesta. All rights reserved.</p>
+</footer>
 
   <script>
     (function () {
@@ -266,5 +286,25 @@
     })();
   </script>
 
+
+<script>
+  (function () {
+    const button = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-header .nav');
+    if (!button || !nav) return;
+    button.addEventListener('click', function () {
+      const open = nav.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(open));
+      button.textContent = open ? '✕' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        nav.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+        button.textContent = '☰';
+      });
+    });
+  })();
+</script>
 </body>
 </html>

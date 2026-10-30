@@ -10,21 +10,20 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html">
-      <span>
-        <strong>SEMESTA PICTURES</strong>
-        <small>PHOTO · VIDEO · WEDDING/ PREWEDDING/ ENGAGEMENT</small>
-      </span>
-    </a>
-    <nav class="nav">
-  <a href="index.html">Beranda Grup</a>
-  <a href="#layanan">Layanan</a>
-  <a href="#paket">Paket Wedding</a>
-  <a href="#cek-progress">Cek Progress Edit</a>
-  <a href="#kontak" class="nav-cta">Konsultasi</a>
-</nav>
-
-  </header>
+  <a class="brand" href="index.html" aria-label="SEMESTA PICTURES - Beranda">
+    <img src="images/semesta-pictures.png" alt="Logo Semesta Pictures">
+    <strong>SEMESTA PICTURES</strong>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+  <nav class="nav" aria-label="Navigasi utama">
+      <a href="index.html">Beranda Grup</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#paket">Paket Wedding</a>
+      <a href="#cek-progress">Cek Progress Edit</a>
+      <a href="#media-sosial">Media Sosial</a>
+      <a href="#kontak" class="nav-cta">Konsultasi</a>
+  </nav>
+</header>
 
   <main>
     <section class="hero" id="home">
@@ -40,7 +39,6 @@
           <a class="text-link" href="#kontak">Konsultasi tanggal ↗</a>
         </div>
       </div>
-    </section>
     </section>
 
     <!-- CEK PROGRESS EDIT -->
@@ -192,9 +190,7 @@
     Konsultasi via WhatsApp →
   </a>
 
-  <a class="button button-outline" href="index.html">
-    
-<p class="form-note">
+  <p class="form-note">
   Instagram:
   <a href="https://www.instagram.com/semesta_pictures/"
      target="_blank" rel="noopener noreferrer">
@@ -203,18 +199,53 @@
 </p>
 <!-- Tombol kembali -->
   <a class="text-link" href="index.html">
-    ← Kembali ke Semesta Group
+    ← Kembali ke Semesta Photo - Video
   </a>
 </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <a class="brand brand-footer" href="index.html">
-      <span><strong>SEMESTA GROUP</strong><small>PHOTO · VIDEO · LIVE STREAMING</small></span>
-    </a>
-    <p>Semesta Pictures — Capture Everyone</p>
-  </footer>
+  
+<section class="social-section section-wrap" id="media-sosial">
+  <div class="social-content">
+    <p class="eyebrow">FOLLOW US</p>
+    <h2>Ikuti Media Sosial Kami</h2>
+    <p>Temukan karya terbaru Semesta Pictures.</p>
+    <div class="social-links">
+      <a class="social-link" href="https://www.instagram.com/semesta_pictures/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Semesta Pictures">
+        <svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        <span>Instagram</span>
+      </a> 
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <a class="brand brand-footer" href="index.html">
+    <img src="images/semesta-pictures.png" alt="" aria-hidden="true">
+    <strong>SEMESTA PICTURES</strong>
+  </a>
+  <p>© 2026 Semesta. All rights reserved.</p>
+</footer>
   <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
+
+<script>
+  (function () {
+    const button = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-header .nav');
+    if (!button || !nav) return;
+    button.addEventListener('click', function () {
+      const open = nav.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(open));
+      button.textContent = open ? '✕' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        nav.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+        button.textContent = '☰';
+      });
+    });
+  })();
+</script>
 </body>
 </html>

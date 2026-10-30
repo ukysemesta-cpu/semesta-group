@@ -12,24 +12,21 @@
 <body>
 
   <header class="site-header">
-
-    <a class="brand" href="index.html">
-      <img
-        src="images/semesta-home-studio.png"
-        alt="Logo Semesta Home Studio">
-      <strong>SEMESTA HOME STUDIO</strong>
-    </a>
-
-    <nav class="nav">
+  <a class="brand" href="index.html" aria-label="SEMESTA HOME STUDIO - Beranda">
+    <img src="images/semesta-home-studio.png" alt="Logo Semesta Home Studio">
+    <strong>SEMESTA HOME STUDIO</strong>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+  <nav class="nav" aria-label="Navigasi utama">
       <a href="index.html">Beranda Grup</a>
       <a href="#layanan">Layanan</a>
       <a href="#paket">Paket Foto</a>
       <a href="#lokasi">Lokasi</a>
       <a href="#cek-progress">Cek Progress Edit</a>
+      <a href="#media-sosial">Media Sosial</a>
       <a href="#kontak" class="nav-cta">Booking</a>
-    </nav>
-
-  </header>
+  </nav>
+</header>
 
   <main>
     <section class="hero" id="home">
@@ -793,25 +790,45 @@
 
   </main>
 
-  <section class="social-section section-wrap" id="media-sosial">
+<section class="social-section section-wrap" id="media-sosial">
   <div class="social-content">
     <p class="eyebrow">FOLLOW US</p>
     <h2>Ikuti Media Sosial Kami</h2>
     <p>Temukan karya terbaru Semesta Home Studio.</p>
-
     <div class="social-links">
-      <a href="https://www.instagram.com/semestahomestudio/"
-         target="_blank" rel="noopener noreferrer">
-        Instagram
+      <a class="social-link" href="https://www.instagram.com/semestahomestudio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Semesta Home Studio">
+        <svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        <span>Instagram</span>
       </a>
-
-      <a href="https://www.tiktok.com/@semesta_studio"
-         target="_blank" rel="noopener noreferrer">
-        TikTok
-      </a>
+      <a class="social-link" href="https://www.tiktok.com/@semesta_studio" target="_blank" rel="noopener noreferrer" aria-label="TikTok Semesta Home Studio">
+        <svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.2a4 4 0 1 1-3-3.87V7.1c2.3 2.05 4.6 2.9 7 3V6.8c-1.6-.1-3-1.2-4-3.8Z" fill="currentColor"/></svg>
+        <span>TikTok</span>
+      </a> 
     </div>
   </div>
 </section>
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="index.html"><img src="images/semesta-home-studio.png" alt="" aria-hidden="true"><strong>SEMESTA HOME STUDIO</strong></a>
+    <p>© 2026 Semesta. All rights reserved.</p>
   </footer>
+<script>
+  (function () {
+    const button = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-header .nav');
+    if (!button || !nav) return;
+    button.addEventListener('click', function () {
+      const open = nav.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(open));
+      button.textContent = open ? '✕' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        nav.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+        button.textContent = '☰';
+      });
+    });
+  })();
+</script>
 </body>
 </html>
