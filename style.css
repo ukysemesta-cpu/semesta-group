@@ -1096,14 +1096,6 @@
   }
 }
 /* PERBAIKAN HEADER HOME STUDIO */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  flex-wrap: nowrap;
-}
-
 .site-header .brand {
   display: flex;
   align-items: center;
@@ -1112,42 +1104,27 @@
   text-decoration: none;
 }
 
-.brand-logo-placeholder {
+.site-header .brand img {
   width: 48px;
   height: 48px;
-  border: 1px solid #142f52;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  font-weight: 700;
-  color: #142f52;
+  object-fit: contain;
+  display: block;
 }
 
 .site-header .brand strong {
   font-size: 17px;
+  font-weight: 800;
   color: #142f52;
   white-space: nowrap;
 }
 
-.site-header .nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 22px;
-  flex-wrap: nowrap;
-}
-
 @media (max-width: 800px) {
-  .site-header {
-    flex-wrap: wrap;
+  .site-header .brand img {
+    width: 40px;
+    height: 40px;
   }
 
-  .site-header .nav {
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 14px;
+  .site-header .brand strong {
+    font-size: 14px;
   }
 }
