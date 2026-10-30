@@ -25,20 +25,21 @@ function getBrandFromService(service) {
 }
 
 const menuButton = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".site-header .nav");
+const nav = document.querySelector(".nav");
 
 if (menuButton && nav) {
   menuButton.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
-
     menuButton.setAttribute("aria-expanded", String(isOpen));
-    menuButton.textContent = isOpen ? "×" : "☰";
+    menuButton.setAttribute("aria-label", isOpen ? "Tutup menu" : "Buka menu");
+    menuButton.textContent = isOpen ? "✕" : "☰";
   });
 
   nav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       nav.classList.remove("open");
       menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Buka menu");
       menuButton.textContent = "☰";
     });
   });
