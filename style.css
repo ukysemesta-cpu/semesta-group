@@ -1397,3 +1397,60 @@
   flex: 0 0 21px;
   color: currentColor;
 }
+/* PERBAIKAN MENU MOBILE */
+@media (max-width: 768px) {
+  .site-header {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .brand-name {
+    max-width: calc(100% - 55px);
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 25px;
+    background: none;
+    border: none;
+    color: #102B4E;
+    padding: 5px 10px;
+  }
+
+  .site-header .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 20px;
+    background: #ffffff;
+    z-index: 9999;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.10);
+  }
+
+  .site-header .nav.open {
+    display: flex;
+  }
+
+  .site-header .nav a {
+    display: block;
+    padding: 12px 0;
+    text-align: left;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-header .nav {
+    display: flex;
+  }
+}
