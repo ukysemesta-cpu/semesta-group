@@ -1128,3 +1128,48 @@
     font-size: 14px;
   }
 }
+/* HEADER HOME STUDIO - LOGO KIRI, NAVIGASI KANAN */
+.site-header {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 20px;
+  width: 100%;
+}
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-header .nav {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: nowrap !important;
+  gap: 22px;
+  width: auto;
+  margin-left: auto;
+}
+
+.site-header .nav a {
+  white-space: nowrap;
+}
+
+/* Tampilan HP */
+@media (max-width: 800px) {
+  .site-header {
+    flex-wrap: wrap !important;
+  }
+
+  .site-header .nav {
+    width: 100%;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    margin-left: 0;
+  }
+}
