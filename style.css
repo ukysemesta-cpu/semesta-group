@@ -872,3 +872,56 @@
     height: 46px;
   }
 }
+
+/* =====================================
+   WATERMARK LOGO 3 BRAND SEMESTA
+   ===================================== */
+
+/* Pengaturan dasar watermark */
+.brand-grid .package-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Lapisan watermark */
+.brand-grid .package-card::before {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  right: 12px;
+  bottom: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.12;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Logo Semesta Home Studio */
+.brand-grid .package-card:nth-child(1)::before {
+  background-image: url("images/semesta-home-studio.png");
+}
+
+/* Logo Semesta Pictures */
+.brand-grid .package-card:nth-child(2)::before {
+  background-image: url("images/semesta-pictures.png");
+}
+
+/* Logo Bawana Project */
+.brand-grid .package-card:nth-child(3)::before {
+  background-image: url("images/bawana-project.png");
+}
+
+/* Penyesuaian untuk layar HP */
+@media (max-width: 600px) {
+  .brand-grid .package-card::before {
+    width: 135px;
+    height: 135px;
+    right: 8px;
+    bottom: 8px;
+    opacity: 0.10;
+  }
+}
