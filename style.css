@@ -930,21 +930,6 @@
   }
 }
 
-/* Semesta Home Studio */
-.brand-grid .package-card:nth-child(1)::before {
-  background-image: url("images/semesta-home-studio.png");
-}
-
-/* Semesta Pictures */
-.brand-grid .package-card:nth-child(2)::before {
-  background-image: url("images/semesta-pictures.png");
-}
-
-/* Bawana Project */
-.brand-grid .package-card:nth-child(3)::before {
-  background-image: url("images/bawana-project.png");
-}
-
 /* Tampilan HP */
 @media (max-width: 600px) {
   .brand-grid .package-card::before {
