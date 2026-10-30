@@ -874,12 +874,16 @@
 }
 
 
-/* =====================================
-   WATERMARK LOGO 3 BRAND SEMESTA
-   ===================================== */
 
-/* WATERMARK LOGO - UKURAN LEBIH KECIL */
+/* WATERMARK LOGO 3 BRAND */
 
+.brand-grid .package-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Logo watermark */
 .brand-grid .package-card::before {
   content: "";
   position: absolute;
@@ -887,18 +891,33 @@
   height: 55px;
   top: 14px;
   right: 14px;
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+
   opacity: 0.70;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
-/* Pastikan tulisan dan tombol berada di atas watermark */
+/* Logo masing-masing brand */
+.brand-grid .package-card:nth-child(1)::before {
+  background-image: url("images/semesta-home-studio.png");
+}
+
+.brand-grid .package-card:nth-child(2)::before {
+  background-image: url("images/semesta-pictures.png");
+}
+
+.brand-grid .package-card:nth-child(3)::before {
+  background-image: url("images/bawana-project.png");
+}
+
+/* Tulisan tetap di atas watermark */
 .brand-grid .package-card > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Tampilan HP */
@@ -910,7 +929,6 @@
     right: 10px;
   }
 }
-
 
 /* Semesta Home Studio */
 .brand-grid .package-card:nth-child(1)::before {
