@@ -903,15 +903,15 @@
 
 /* Logo masing-masing brand */
 .brand-grid .package-card:nth-child(1)::before {
-  background-image: url("images/semesta-home-studio.png");
+  background-image: url("images/semesta-home-studio.webp");
 }
 
 .brand-grid .package-card:nth-child(2)::before {
-  background-image: url("images/semesta-pictures.png");
+  background-image: url("images/semesta-pictures.webp");
 }
 
 .brand-grid .package-card:nth-child(3)::before {
-  background-image: url("images/bawana-project.png");
+  background-image: url("images/bawana-project.webp");
 }
 
 /* Tulisan tetap di atas watermark */
